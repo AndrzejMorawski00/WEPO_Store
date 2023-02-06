@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>Profile</title>
+        <link rel="stylesheet" type="text/css" href="../static/styles/profile.css" />
+        <link rel="stylesheet" type="text/css" href="../static/styles/settings.css" />
+    </head>
+    <body>
+        <a class="link" href="/">Home</a>
+        <div class="orders">
+            <% orderData.forEach(order => {%>
+            <div class="order">
+                <% if (order.status) {%>
+                <p class="order__paragraph">Done</p>
+                <%} else {%>
+                <p class="order__paragraph">In porgress</p>
+                <%}%>
+                <p class="order__paragraph">Product List: <%= Object.keys(JSON.parse(order.products))%></p>
+                <p class="order__paragraph">Price: <%= order.price%></p>
+            </div>
+            
+            <%})%>
+        </div>
+    </body>
+</html>

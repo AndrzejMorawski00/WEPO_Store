@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>Edit Product</title>
+        <style>
+            @import url("https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;600&display=swap");
+            * {
+                box-sizing: border-box;
+                padding: 0;
+                margin: 0;
+                font-family: "Montserrat", sans-serif;
+                font-size: 10px;
+            }
+
+            body {
+                width: 100vw;
+                display: flex;
+                align-items: center;
+                flex-direction: column;
+                margin-top: 5rem;
+            }
+            .paragraph {
+                font-size: 3rem;
+            }
+            .link {
+                font-size: 3rem;
+                text-decoration: none;
+            }
+
+            .form {
+                display: flex;
+                flex-direction: column;
+                gap: 1.5rem;
+                border: 1px solid black;
+                padding: 1rem;
+                border-radius: 5px;
+            }
+
+            .form__label {
+                font-size: 3rem;    
+                text-align: center;
+
+            }
+            .form__input {
+                font-size: 3rem;
+            }
+            .label__checkbox {
+                text-align: center;
+            }
+            .form__submit {
+                font-size: 3rem;
+                padding: 0.5rem;
+            }
+        </style>
+    </head>
+
+    <body>
+        <a class="link" href="/">Home</a>
+        <a class="link" href="/admin-panel">Back</a>
+        <p class="paragraph">Edit Product:</p>
+        <form class="form" action="" enctype="multipart/form-data" method="POST">
+            <label class="form__label" for="product__name">Product Name:</label>
+            <input class="form__input" value="<%= product.name %>" required type="text" name="product_name" id="product__name" />
+
+            <label class="form__label" for="product__price">Product Price:</label>
+            <input class="form__input" value="<%= product.price%>" required type="number" name="product_price" id="product__price" />
+
+            <label class="form__label" for="product__image">Product Image:</label>
+            <input class="form__input" type="file" name="product_image" id="product__image" />
+
+            <label class="form__label" for="product__size">Product Size:</label>
+            <input class="form__input" value="<%= product.size%>" required type="number" name="product_size" id="product__size" />
+
+            <label class="form__label label__checkbox" for="product__visible">Is visible:</label>
+            <input class="form__checkbox" <% if (product.is_visible) {%> checked<%}%> type="checkbox" name="product_visible" id="product__visible" />
+
+            <input class="form__submit" type="submit" name="save_changes" value="Save Changes" />
+            <input class="form__submit" type="submit" name="delete" value="Delete Product" />
+        </form>
+    </body>
+</html>

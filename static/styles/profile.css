@@ -1,0 +1,24 @@
+.link {
+    font-size: 3rem;
+    text-decoration: none;
+    margin-bottom: 5rem;
+}
+
+.orders {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 2rem;
+}
+
+.order {
+    border: 1px solid black;
+    padding: 1rem;
+    width: 100%;
+    border-radius: 5px;
+    box-shadow: 2px 2px 2px rgba(0,0,0, 0.2);
+}
+.order__paragraph {
+    font-size: 3rem;
+
+}
