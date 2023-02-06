@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>Users</title>
+        <link rel="stylesheet" href="../static/styles/settings.css" />
+        <link rel="stylesheet" href="../static/styles/users.css" />
+    </head>
+    <body>
+        <a class="link" href="/">Home</a>
+        <a class="link" href="/admin-panel">Back</a>
+        <ul class="list">
+            <% if (typeof users !== "undefined") {%> <% users.forEach(user => {%>
+            <li class="list__item">
+                <p class="list__paragraph">First Name: <%= user.first_name %> Last Name: <%= user.last_name %></p>
+                <p class="list__paragraph">Email: <%= user.e_mail %></p>
+            </li>
+            <%})%> <%}%>
+        </ul>
+    </body>
+</html>

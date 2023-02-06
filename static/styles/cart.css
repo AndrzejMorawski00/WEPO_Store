@@ -1,0 +1,34 @@
+.link {
+    font-size: 3rem;
+    text-decoration: none;
+}
+body {
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+}
+
+.cart__heading {
+    font-size: 4rem;
+    text-align: center;
+}
+.cart {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 1.5rem;
+}
+.product {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.product__paragraph {
+    font-size: 2rem;
+}
+.form__submit {
+    font-size: 2rem;
+    padding: 0.5rem;
+    margin-top: 1rem;
+}

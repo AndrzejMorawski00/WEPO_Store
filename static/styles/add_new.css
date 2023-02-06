@@ -1,0 +1,40 @@
+.link {
+    font-size: 3rem;
+    margin: 1rem 0;
+    text-decoration: none;
+}
+.heading {
+    font-size: 4rem;
+    margin: 1rem 0
+}
+
+.form {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+    align-items: center;
+}
+
+.form__input {
+    font-size: 3rem;
+    padding: 0.5rem;
+}
+
+.form__label {
+    font-size: 3rem;    
+}
+
+.form__file {
+    margin-left: 27rem;
+    font-size: 3rem;
+    padding: 0.5rem 1rem;
+    
+}
+.form__checkbox {
+    width: 10rem;
+}
+
+.form__submit {
+    font-size: 3rem;
+    padding: 0.5rem 1rem;
+}

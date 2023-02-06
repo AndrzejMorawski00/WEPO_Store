@@ -1,0 +1,28 @@
+.link {
+    font-size: 3rem;
+    text-decoration: none;
+}
+
+.product__wrapper {
+    display: flex;
+    gap: 5rem;
+    margin-top: 4rem;
+}
+
+.product {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 1rem
+}
+.product__paragraph {
+    font-size: 3rem; 
+}
+
+.product__img {
+    height: 15rem;
+}
+.product__button {
+    font-size: 3rem;
+    padding: 0.5rem 1rem;
+}

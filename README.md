@@ -1,1 +1,0 @@
-# WEPO_Store

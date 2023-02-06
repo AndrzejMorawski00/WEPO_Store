@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>Add new Product</title>
+        <link rel="stylesheet" href="../static/styles/add_new.css" />
+        <link rel="stylesheet" href="../static/styles/settings.css" />
+    </head>
+    <body>
+        
+        <a class="link" href="/">Home</a>
+        <a class="link" href="/admin-panel">Back</a>
+        <% if (typeof errors != 'undefined') {%> 
+            <% errors.forEach(error => {%>
+                <li class="error"><p class="error__p"><%= error.message%></p></li>
+            <% })%> 
+        <%}%> 
+        <h1 class="heading">Add new Product</h1>
+        <form class="form" action="" enctype="multipart/form-data" method="POST">
+            <label class="form__label" for="product__name">Product Name:</label>
+            <input class="form__input" value="" required type="text" name="product_name" id="product__name" />
+            
+            <label class="form__label" for="product__price">Product Price:</label>
+            <input class="form__input" value="" required type="number" name="product_price" id="product__price" />
+            
+            <label class="form__label" for="product__image">Product Image:</label>
+            <input class="form__input form__file" type="file" name="product_image" id="product__image" />
+            
+            <label class="form__label" for="product__size">Product Size:</label>
+            <input class="form__input " value="" required type="number" name="product_size" id="product__size" />
+
+            <label class="form__label" for="product__visible">Is visible:</label>
+            <input class="form__checkbox" type="checkbox" name="product_visible" id="product__visible" />
+            
+            <input class="form__submit" type="submit" value="Add Product" />
+        </form>
+    </body>
+</html>

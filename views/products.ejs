@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>Products</title>
+        <link rel="stylesheet" type="text/css" href="../static/styles/products.css">
+        <link rel="stylesheet" type="text/css" href="../static/styles/settings.css" />
+    </head>
+    <body>
+        <a class="link" href="/">Home</a>
+        <a class="link" href="/admin-panel">Back</a>
+        <a class="link" href="/admin-panel/add-new">Add New Product</a>
+        <div class="product__wrapper">
+            <% if (typeof products !=="undefined") {%> <%products.forEach(product => {%>
+            <div class="product">
+                <p class="product__paragraph"><%=product.name%></p>
+                <div>
+                    <% if (product.photo !== "") {%>
+                    <img class="product__img" src="/static/images/<%=product.photo%>" />
+                    <%}%>
+                </div>
+                <p class="product__paragraph">Price: <%=product.price%>$ Size: <%=product.size%></p>
+                <p class="product__paragraph">Is Visible: <% if(product.is_visible) {%> Yes <%} else {%> No <%}%></p>
+                <a href="/admin-panel/products/edit/<%= product.id%>"><button class="product__button">Edit</button></a>
+            </div>
+            <%})%> <%}%>
+        </div>
+    </body>
+</html>

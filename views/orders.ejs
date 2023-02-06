@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>Orders</title>
+        <link rel="stylesheet" type="text/css" href="../static/styles/orders.css" />
+        <link rel="stylesheet" type="text/css" href="../static/styles/settings.css" />
+    </head>
+
+    <body>
+        <a class="link" href="/">Home</a>
+        <a class="link" href="/admin-panel">Back</a>
+        <ul class="order__wrapper">
+            <% if (typeof orderData !=="undefined") {%> <%orderData.forEach(order => {%>
+            <li class="order">
+                <div class="order__header">
+                    <div class="user" style="margin-right: 20px">
+                        <!-- User -->
+                        <p class="order__paragraph">User ID: <%= order[2].id%></p>
+                        <p class="order__paragraph">User: <%= order[2].first_name%> <%= order[2].last_name%></p>
+                        <p class="order__paragraph">User Email: <%= order[2].e_mail%></p>
+                    </div>
+                    <div class="order__data">
+                        <!-- Order -->
+                        <p class="order__paragraph">Order ID: <%=order[0].id%></p>
+                        <p class="order__paragraph">Order Price: <%=order[0].price%></p>
+                        <% if (order[0].status ==true) {%>
+                        <p class="order__paragraph">Done</p>
+                        <%} else {%>
+                        <p class="order__paragraph">In progress</p>
+                        <%}%>
+                    </div>
+                </div>
+                <form class="form" method="POST">
+                    <input class="form__input" type="submit" name="<%=order[0].status%> <%= order[0].id%>" value="Change Status" />
+                </form>
+                <ul class="product">
+                    <!-- Products -->
+                    <% order[1].forEach(o => { %>
+                    <li class="product__item">Product ID: <%= o.id%> Product Name: <%=o.name%> Product Size: <%=o.size%></li>
+                    <%})%>
+                </ul>
+            </li>
+            <%})%> <%}%>
+        </ul>
+    </body>
+</html>

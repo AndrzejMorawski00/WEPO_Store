@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Register</title>
+    <link rel="stylesheet" href="../static/styles/register_login.css" />
+    <link rel="stylesheet" href="../static/styles/settings.css" />
+</head>
+<body>
+    <a class="link" href="/">Return to main page</a>
+    <ul>
+        <% if (typeof errors != 'undefined') {%>
+            <% errors.forEach(error => {%>
+                <li class="errors"><p class="errors__p"><%= error.message%></p></li>
+            <% })%>
+        <%}%>
+    </ul>
+    <h1 class="heading">Register</h1>
+    <form class="form" action="" method="POST">
+        <label class="form__label" for="first_name">First Name:</label>
+        <input class="form__input" type="text" name="first_name" id="first_name" />
+
+        <label class="form__label" for="last_name">Last Name:</label>
+        <input class="form__input" type="text" name="last_name" id="last_name" />
+    
+        <label class="form__label" for="user_email">User Email:</label>
+        <input class="form__input" type="text" name="user_email" id="user_email" required />
+    
+        <label class="form__label" for="user_password">User Password:</label>
+        <input class="form__input" type="password" name="user_password" id="user_password" required />
+    
+        <label class="form__label" for="confirm_password">Confirm Password:</label>
+        <input class="form__input" type="password" name="confirm_password" id="confirm_password" required />
+        <input class="form__submit" type="submit" value="Register" />
+    </form>
+    <a class="link" href="/users/login">Already registred? Login here</a>
+</body>
+</html>

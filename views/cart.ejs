@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>Cart</title>
+        <link rel="stylesheet" href="../static/styles/cart.css" />
+        <link rel="stylesheet" href="../static/styles/settings.css" />
+    </head>
+    <body>
+        <a class="link" href="/">Home</a>
+        <div class="cart_wrapper">
+            <h1 class="cart__heading">Cart</h1>
+            <div class="cart">
+                <%let totalSum = 0%> <% for (let i =0; i < productList.length; i++) {%> <% totalSum += productAmount[i] * productList[i].price %>
+                <div class="product">
+                    <img class="product__img" src="/static/images/<%=productList[i].photo%>" height="100px" />
+                    <div>
+                        <p class="product__paragraph"><%= productList[i].name%></p>
+                        <p class="product__paragraph">Amount: <%= productAmount[i]%> Price: <%=productList[i].price%> Sum: <% productList[i].price * productAmount[i] %></p>
+                    </div>
+                    <form class="form" action="" method="POST">
+                        <input class="form__submit" type="submit" name="remove <%=productList[i].id %>" value="Remove" />
+                    </form>
+                </div>
+                <%}%>
+                <p class="product__paragraph">Total Sum: <%= totalSum%> $</p>
+                <form class="form" action="" method="POST">
+                    <input class="form__submit" type="submit" name="order <%=totalSum%>" value="Order" />
+                </form>
+            </div>
+        </div>
+    </body>
+</html>
