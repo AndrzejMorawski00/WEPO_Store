@@ -5,8 +5,8 @@
         <meta http-equiv="X-UA-Compatible" content="IE=edge" />
         <meta name="viewport" content="width=device-width, initial-scale=1.0" />
         <title>Shop</title>
-        <link rel="stylesheet" href="../static/styles/index.css" />
-        <link rel="stylesheet" href="../static/styles/settings.css" />
+        <link rel="stylesheet" href="/static/styles/index.css" />
+        <link rel="stylesheet" href="/static/styles/settings.css" />
     </head>
     <body>
         <div class="header">
@@ -41,8 +41,8 @@
                 <div class="product">
                     <p class="product__name"><%= product.name%></p>
                     <img class="product__img" src="/static/images/<%=product.photo%>"  />
-                    <p class="product__price">Cena: <%= product.price%> $</p>
-                    <p class="product__size">Rozmiar: <%= product.size%></p>
+                    <p class="product__price">Price: <%= product.price%> $</p>
+                    <p class="product__size">Size: <%= product.size%></p>
                     <% if (typeof user_id != 'undefined') {%>
                     <form action="" method="POST">
                         <input class="product__add" type="submit" name="Add <%=product.id%>" value="Add to Cart" />
